@@ -1,0 +1,205 @@
+:root {
+    --colorWHITE: #fff;
+    --colorBLACK: #000;
+    /* --colorWHITE: #000;
+    --colorBLACK: #fff; */
+}
+
+/* -- dark mode -- */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --colorWHITE: #000;
+        --colorBLACK: #fff;
+    }
+}
+
+/* -- all -- */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    border-collapse: collapse;
+    vertical-align: top;
+    /* box-sizing: border-box; */
+    /* user-select: none; */
+    /* -webkit-appearance: none; */
+    color: var(--colorBLACK);
+    font-weight: 300;
+	font-family: "Press Start 2P","Quantico","Heebo", Arial, Helvetica, sans-serif;
+    text-align: justify; 
+}
+
+*:focus {
+    outline: none;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--colorWHITE);
+    background-image: url("https://www.transparenttextures.com/patterns/tiny-grid.png");
+    /* background-image: url("../images/bg.png"); */
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-repeat:repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* -- header -- */
+
+header {
+    /* border-bottom: 1px solid #ccc; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20vh;
+    position: relative;
+}
+header p, header span, header button{
+    color:var(--colorBLACK);
+}
+
+/* -- div_title -- */
+#div_title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+#div_title #sp_title{
+    font-size: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+#div_title button{
+    background-color: transparent;
+    border:1px dotted var(--colorBLACK);
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+/* -- div_infos -- */
+#div_infos{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+#div_infos p,
+#div_infos p span{
+    font-size: 12px;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+/* -- main -- */
+main{
+    height: 80vh;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* -- #bt_play -- */
+main #bt_play{
+
+}
+
+/* -- aside -- */
+main aside{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+}
+/* -- img : coin + player1 -- */
+#player1,.coin{
+    margin:auto;
+    position: absolute;
+}
+#player1{
+    width:20%;
+    bottom: 0px;
+}
+.coin,
+.object{
+    text-align: center;
+    width: 20%;
+}
+.coin{
+    top: 0px;
+    font-size: 20px;
+}
+.object{
+    font-size: 40px;
+}
+
+/* -- div_menu -- */
+#div_menu{
+
+    z-index: 2;
+    position: absolute;
+    top:200px;
+    left: 30px;
+    right: 30px;
+    padding: 20px;
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:1px dashed #111;
+}
+
+#div_menu p, 
+#div_menu span{
+    color:#fff;
+}
+#p_gameover{
+    margin-bottom: 20px;
+}
+#div_menu button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border:1px dashed #111;
+}
+/* -- game_over -- */
+.game_over{
+    background:#111;
+}
+
+[data-pos="1"]{ left: calc(12.5% - 10%); }
+[data-pos="2"]{ left: calc(12.5% - 10% + 25%); }
+[data-pos="3"]{ left: calc(12.5% - 10% + 25% + 25%); }
+[data-pos="4"]{ left: calc(12.5% - 10% + 25% + 25% + 25%); }
+
+/* -- mobile --*/
+
+@media screen and (max-width: 800px) {
+    header span{
+        font-size: 30px;
+    }
+    main img{
+        width:calc(100% - 20px);
+    }
+}
